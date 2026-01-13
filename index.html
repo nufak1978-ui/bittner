@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BITTNER - PROJEKT | Architektonická a projekční činnost</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: #1f2937;
+      line-height: 1.6;
+      background-color: #ffffff;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      text-align: center;
+      color: #1f2937;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #4b5563;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                  url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&h=900&fit=crop") center/cover no-repeat;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      padding: 0 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+      font-weight: 300;
+    }
+
+    .hero-contact {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 8px;
+      display: inline-block;
+      color: #1f2937;
+      margin-top: 2rem;
+    }
+
+    .hero-contact a {
+      color: #0369a1;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    .hero-contact a:hover {
+      color: #075985;
+    }
+
+    .stats {
+      background: #f0f9ff;
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      padding: 1rem;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #0369a1;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: #4b5563;
+      margin-top: 0.5rem;
+    }
+
+    .o-nas-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .sluzby-section {
+      background: #f9fafb;
+    }
+
+    .sluzby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .sluzba-kategorie {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .sluzba-kategorie h3 {
+      color: #0369a1;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .sluzba-kategorie ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sluzba-kategorie li {
+      padding: 0.6rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #4b5563;
+    }
+
+    .sluzba-kategorie li:before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #0369a1;
+      font-weight: bold;
+    }
+
+    .kontakt-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                  url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&h=900&fit=crop') center/cover;
+      color: white;
+    }
+
+    .kontakt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .kontakt-item {
+      text-align: center;
+    }
+
+    .kontakt-item strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: #e0f2fe;
+    }
+
+    .kontakt-item a {
+      color: #7dd3fc;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .kontakt-item a:hover {
+      color: #bae6fd;
+    }
+
+    .kontakt-item p {
+      color: #e0f2fe;
+      font-size: 1.1rem;
+    }
+
+    .firma-info {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .firma-info p {
+      color: #e0f2fe;
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      background: #1f2937;
+      color: #9ca3af;
+      text-align: center;
+      padding: 2rem 20px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      section {
+        padding: 50px 20px;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>BITTNER - PROJEKT</h1>
+      <p class="hero-subtitle">Architektonická, projekční a inženýrská činnost</p>
+      <div class="hero-contact">
+        <a href="tel:+420778073373">📞 +420 778 073 373</a>
+        <a href="mailto:bittner.projekt@seznam.cz">✉️ bittner.projekt@seznam.cz</a>
+      </div>
+      <div class="stats">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">let zkušeností</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">550+</div>
+            <div class="stat-label">realizovaných projektů</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O NÁS -->
+  <section id="o-nas">
+    <h2>O firmě</h2>
+    <div class="o-nas-content">
+      <p>
+        BITTNER - PROJEKT se již od roku 2010 zabývá komplexním zpracováním stavebních projektů a zajištěním veškeré dokumentace potřebné pro povolení stavby. Za 15 let jsme úspěšně zrealizovali přes 550 projektů různého charakteru.
+      </p>
+      <p style="margin-top: 1.5rem;">
+        Naše služby zahrnují projektovou dokumentaci pro novostavby rodinných domů, zateplení objektů, rekonstrukce, změny užívání staveb i kompletní inženýrskou činnost včetně vyřízení všech potřebných stanovisek a povolení přes portál stavebníka.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLUŽBY -->
+  <section class="sluzby-section">
+    <h2>Naše služby</h2>
+    <div class="sluzby-grid">
+      <div class="sluzba-kategorie">
+        <h3>Projekční činnost</h3>
+        <ul>
+          <li>Projekty novostaveb rodinných domů</li>
+          <li>Projekty rekreačních chat</li>
+          <li>Zateplení objektů</li>
+          <li>Parkovací plochy a garáže</li>
+          <li>Domovy pro seniory</li>
+          <li>Stavební úpravy objektů</li>
+          <li>Změny užívání objektů</li>
+          <li>Přístavby a nástavby</li>
+          <li>Inženýrské sítě</li>
+          <li>Realizační projekty</li>
+          <li>Projekty pro dotace</li>
+        </ul>
+      </div>
+
+      <div class="sluzba-kategorie">
+        <h3>Inženýrská činnost</h3>
+        <ul>
+          <li>Požární zpráva</li>
+          <li>Statika konstrukce</li>
+          <li>Stavební dozor</li>
+          <li>Digitální razítko</li>
+          <li>Průkaz energetické náročnosti</li>
+          <li>Hydrogeologie</li>
+          <li>Zpráva o radonu</li>
+          <li>Vyjmutí ze ZPF</li>
+          <li>Stanoviska ŽP, KHS, HZS</li>
+          <li>Stanovisko CHKO</li>
+          <li>Stanoviska inženýrských sítí</li>
+          <li>Kompletní podání přes portál stavebníka</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" class="kontakt-section">
+    <h2>Kontakt</h2>
+    <div class="kontakt-grid">
+      <div class="kontakt-item">
+        <strong>Telefon</strong>
+        <a href="tel:+420778073373">+420 778 073 373</a>
+      </div>
+      <div class="kontakt-item">
+        <strong>E-mail</strong>
+        <a href="mailto:bittner.projekt@seznam.cz">bittner.projekt@seznam.cz</a>
+      </div>
+      <div class="kontakt-item">
+        <strong>Datová schránka</strong>
+        <p>pzegg35</p>
+      </div>
+    </div>
+
+    <div class="firma-info">
+      <p><strong>BITTNER - PROJEKT</strong></p>
+      <p>Ing. Jiří Bittner</p>
+      <p>Čeladná 121, 739 12 Čeladná</p>
+      <p>IČO: 75399393</p>
+      <p style="margin-top: 1rem;">Působíme v Moravskoslezském kraji a okolí</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 BITTNER - PROJEKT, Ing. Jiří Bittner. Všechna práva vyhrazena.
+  </footer>
+
+  <script>
+    // Plynulé rolování při kliknutí na odkaz
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
